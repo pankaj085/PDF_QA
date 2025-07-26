@@ -26,6 +26,29 @@ Upload a PDF, ask questions, and get context-aware answers powered by Groq LLM, 
 
 ---
 
+## API Keys & Secrets
+
+This app requires several secrets and configuration values, which must be set in a `.env` file in the project root:
+
+- `GROQ_API_KEY`: Your Groq LLM API key (required for question answering).
+- `LLM_MODEL_NAME`: The name of the Groq LLM model to use (default: `llama3-8b-8192`).
+- `EMBEDDING_MODEL_NAME`: The name of the SentenceTransformers embedding model (default: `all-MiniLM-L6-v2`).
+- `CHROMA_DB_PATH`: Path to ChromaDB persistent storage (default: `./chroma_db`).
+- `CHROMA_COLLECTION_NAME`: Name of the ChromaDB collection for storing PDF chunks (default: `pdf_chunks`).
+
+**Important:**  
+Never commit your `.env` file or secrets to public repositories.
+
+---
+
+## Logging
+
+- All API activity and errors are logged to `pdf_qa_app.log` in the `app/` directory.
+- This log file is automatically created and updated when the server runs.
+- You can review this file for debugging, monitoring, and auditing purposes.
+
+---
+
 ## Quick Start
 
 1. **Clone the repository**
@@ -46,7 +69,23 @@ Upload a PDF, ask questions, and get context-aware answers powered by Groq LLM, 
     ```
 
 4. **Configure environment variables**
-    - Copy `.env.example` to `.env` and fill in your secrets (Groq API key, etc).
+    - Copy this `.env.example` to `.env` and fill in your secrets (Groq API key, etc).
+    ```
+    # Groq API key for LLM access
+    GROQ_API_KEY=
+
+    # Name of the LLM model to use
+    LLM_MODEL_NAME=
+
+    # Name of the embedding model to use (note: spelling should be EMBEDDING_MODEL_NAME)
+    EMEDDING_MODEL_NAME=
+
+    # Path to ChromaDB persistent storage
+    CHROMA_DB_PATH=
+
+    # Name of the ChromaDB collection for storing PDF chunks
+    CHROMA_COLLECTION_NAME=
+    ```
 
 5. **Run the app**
     ```bash
