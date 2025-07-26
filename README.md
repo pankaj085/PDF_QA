@@ -30,11 +30,11 @@ Upload a PDF, ask questions, and get context-aware answers powered by Groq LLM, 
 
 This app requires several secrets and configuration values, which must be set in a `.env` file in the project root:
 
-- `GROQ_API_KEY`: Your Groq LLM API key (required for question answering).
-- `LLM_MODEL_NAME`: The name of the Groq LLM model to use (default: `llama3-8b-8192`).
-- `EMBEDDING_MODEL_NAME`: The name of the SentenceTransformers embedding model (default: `all-MiniLM-L6-v2`).
-- `CHROMA_DB_PATH`: Path to ChromaDB persistent storage (default: `./chroma_db`).
-- `CHROMA_COLLECTION_NAME`: Name of the ChromaDB collection for storing PDF chunks (default: `pdf_chunks`).
+- `GROQ_API_KEY`: Your Groq cloud API key (required for accessing LLM from the Groq Cloud Console).
+- `LLM_MODEL_NAME`: The name of the Groq LLM model to use.
+- `EMBEDDING_MODEL_NAME`: The name of the SentenceTransformers embedding model.
+- `CHROMA_DB_PATH`: Path to ChromaDB persistent storage.
+- `CHROMA_COLLECTION_NAME`: Name of the ChromaDB collection for storing PDF chunk.
 
 **Important:**  
 Never commit your `.env` file or secrets to public repositories.
@@ -57,10 +57,16 @@ Never commit your `.env` file or secrets to public repositories.
     cd pdf-qa
     ```
 
-2. **Create and activate a virtual environment**
+2. **Create and activate a Python virtual environment**
     ```bash
     python3 -m venv venv
     source venv/bin/activate
+    ```
+
+   **Or, (Recommended) create a conda environment using `environment.yml`:**
+    ```bash
+    conda env create -f environment.yml
+    conda activate pdf_qa
     ```
 
 3. **Install dependencies**
@@ -78,7 +84,7 @@ Never commit your `.env` file or secrets to public repositories.
     LLM_MODEL_NAME=
 
     # Name of the embedding model to use (note: spelling should be EMBEDDING_MODEL_NAME)
-    EMEDDING_MODEL_NAME=
+    EMBEDDING_MODEL_NAME=
 
     # Path to ChromaDB persistent storage
     CHROMA_DB_PATH=
@@ -126,11 +132,21 @@ app/
     embedder.py
     vectordb.py
     query.py
+tests/
+  __init__.py
+  test_api.py
+  test_utils.py
 .env
 requirements.txt
+environment.yml
 README.md
 LICENSE
+pdf_qa_app.log
 ```
+
+- The `tests/` directory contains unit and integration tests for API endpoints and utility functions.
+- You can run tests using `pytest` or your preferred test runner.
+- Keeping tests organized helps ensure reliability and makes future development easier.
 
 ---
 
