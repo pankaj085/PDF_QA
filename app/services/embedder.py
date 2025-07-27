@@ -2,7 +2,7 @@
 
 from typing import List
 import numpy as np
-from config import get_embedding_model
+from ..config import get_embedding_model
 
 # Load the embedding model (SentenceTransformer instance)
 embedding_model = get_embedding_model()

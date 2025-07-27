@@ -1,9 +1,9 @@
 from datetime import datetime
 from fastapi import APIRouter, HTTPException, status, Depends
-from models import QuestionRequest, QuestionResponse
-from services.query import ask_question
-from dependencies import get_db_status
-from logging_config import logger
+from ..models import QuestionRequest, QuestionResponse
+from ..services.query import ask_question
+from ..dependencies import get_db_status
+from ..logging_config import logger
 
 
 router = APIRouter(

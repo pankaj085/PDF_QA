@@ -1,6 +1,6 @@
 from fastapi import status
 from fastapi.responses import JSONResponse
-from logging_config import logger
+from .logging_config import logger
 
 
 # Custom exception handler

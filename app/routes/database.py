@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, status
-from models import DatabaseStats
-from services.vectordb import collection
-from logging_config import logger
+from ..models import DatabaseStats
+from ..services.vectordb import collection
+from ..logging_config import logger
 
 
 router = APIRouter(
@@ -14,7 +14,7 @@ router = APIRouter(
 async def get_database_stats():
     """Get statistics about the vector database."""
     try:
-        from config import CHROMA_DB_PATH, CHROMA_COLLECTION_NAME, EMBEDDING_MODEL_NAME
+        from ..config import CHROMA_DB_PATH, CHROMA_COLLECTION_NAME, EMBEDDING_MODEL_NAME
         
         return DatabaseStats(
             collection_name=CHROMA_COLLECTION_NAME,

@@ -1,7 +1,7 @@
 from typing import Any, Dict
 from .embedder import embed_chunks
 from .vectordb import query_similar_chunks
-from config import get_llm_client
+from ..config import get_llm_client
 
 llm = get_llm_client()
 

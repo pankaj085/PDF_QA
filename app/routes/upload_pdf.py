@@ -3,12 +3,12 @@ import tempfile
 from fastapi import APIRouter, UploadFile, File, HTTPException, status
 from datetime import datetime
 
-from logging_config import logger
-from models import UploadResponse
-from services.chunker import chunk_pdf, extract_text_from_pdf
-from services.embedder import embed_chunks
-from services.vectordb import store_embeddings
-from services.vectordb import collection
+from ..logging_config import logger
+from ..models import UploadResponse
+from ..services.chunker import chunk_pdf, extract_text_from_pdf
+from ..services.embedder import embed_chunks
+from ..services.vectordb import store_embeddings
+from ..services.vectordb import collection
 
 
 router = APIRouter(

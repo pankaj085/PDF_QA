@@ -1,9 +1,8 @@
 from fastapi import APIRouter, Depends
 from datetime import datetime
 
-from models import HealthResponse
-from dependencies import get_db_status
-from models import HealthResponse
+from ..models import HealthResponse
+from ..dependencies import get_db_status
 
 
 router = APIRouter(

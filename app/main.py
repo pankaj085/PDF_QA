@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 
 # Import your custom modules
-from logging_config import logger
+from .logging_config import logger
 
 from routes.health import router as health_router
 from routes.upload_pdf import router as upload_pdf_router

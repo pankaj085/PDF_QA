@@ -1,6 +1,6 @@
 from typing import List
 import numpy as np
-from config import get_chroma_client, get_vector_db_collection
+from ..config import get_chroma_client, get_vector_db_collection
 
 # ✅ No type checker complaints now
 client = get_chroma_client()
