@@ -7,11 +7,11 @@ from contextlib import asynccontextmanager
 # Import your custom modules
 from .logging_config import logger
 
-from routes.health import router as health_router
-from routes.upload_pdf import router as upload_pdf_router
-from routes.qa import router as qa_router
-from routes.database import router as database_router
-from exceptions import value_error_handler, runtime_error_handler
+from .routes.health import router as health_router
+from .routes.upload_pdf import router as upload_pdf_router
+from .routes.qa import router as qa_router
+from .routes.database import router as database_router
+from .exceptions import value_error_handler, runtime_error_handler
 
 
 
