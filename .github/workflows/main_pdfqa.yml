@@ -2,7 +2,7 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 # More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
 
-name: Build and deploy Python app to Azure Web App - pdfQA
+name: Build and deploy Python app to Azure Web App - pdfqa
 
 on:
   push:
@@ -58,14 +58,14 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_E75A29AFA5EB4C8CB4B6B428E596BD6A }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_99773C914E8E446D83CCAA9F5F1F2A66 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C5A04FCD13B249949A9BEDDC63A73960 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_AAC2020884E74DEA85CA81774356965D }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_9AA8980F526246E1A7BF14792C9333A9 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_5A6EF005F2F14C8882059963C461273D }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'pdfQA'
+          app-name: 'pdfqa'
           slot-name: 'Production'
           
